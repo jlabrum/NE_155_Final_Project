@@ -1,0 +1,189 @@
+c Baghdad Neutron Filter  - NE 155 FINAL PROJECT SPRING 2015
+c JOSEPH LABRUM, KEETON ROSS                 
+c ---------------------------------------------------------                     
+c ---------------------------------------------------------                     
+c CELL CARD                                                                     
+c ---------------------------------------------------------                     
+c ---------------------------------------------------------                     
+  100     1      -1 2 8 -9 -25 24 26 -27 imp:n=1 imp:p=0 $water
+  101     3    -2.4 2 9 -23 24 -25 26 -27 imp:n=1 imp:p=0  $concrete
+  102     4    -1.4 -2 1 8 -22  imp:n=1 imp:p=0$PVC pipe
+  103     9   -0.001225 -1 8 -10  imp:n=1 imp:p=0$void1
+  104     5   -2.52 -1 10 -11  imp:n=1 imp:p=0$B_4C plug
+  105     2  -11.34 -1 11 -12  imp:n=1 imp:p=0$lead plug
+  106     7   -7.86 -1 3 12 -13  imp:n=1 imp:p=0$first iron collimator
+  107     9 -0.001225 -3 12 -13  imp:n=1 imp:p=0$void inside first iron coll
+  108     9 -0.001225 13 -14 -1  imp:n=1 imp:p=0$void 2
+  109     7   -7.86 -1 4 14 -15  imp:n=1 imp:p=0$second iron collimator
+  110     9 -0.001225 -4 14 -15  imp:n=1 imp:p=0$void inside second iron coll
+  111     9 -0.001225 15 -16 -1  imp:n=1 imp:p=0$void 3
+  112     7   -7.86 -1 5 16 -17  imp:n=1 imp:p=0$third iron collimator
+  113     9 -0.001225 -5 16 -17  imp:n=1 imp:p=0$void inside 3rd iron coll
+  114     9 -0.001225 -1 17 -18  imp:n=1 imp:p=0$void4
+  115    10   -8.75 -1 18 -19  imp:n=1 imp:p=0$cd foil
+  116     2  -11.34 -1 6 19 -20  imp:n=1 imp:p=0$4th lead coll
+  117     9 -0.001225 -6 19 -20  imp:n=1 imp:p=0$void inside 4th lead coll
+  118     9 -0.001225 -1 20 -21  imp:n=1 imp:p=0$void 5
+  119     2  -11.34 -1 4 21 -22  imp:n=1 imp:p=0$5th lead coll
+  120     9 -0.001225 -4 21 -22  imp:n=1 imp:p=0$void inside 5th lead coll
+  121     9 -0.001225 -7 22 -28  imp:n=1 imp:p=0$void in FeCH_2
+  122     9 -0.001225 -6 28 -30  imp:n=1 imp:p=0$final collimation voil
+  123     6  -1.715 23 -35 34 31 -32 -29  imp:n=1 imp:p=0$B_4H+CH_2 * 50/50 mix
+  124     2  -11.34 23 -41 -36 35 31 -32  imp:n=1 imp:p=0$outer lead top
+  125     2  -11.34 29 -41 -35 33 31 -32 #(-6 -41 29 ) imp:n=1 imp:p=0$outer lead bottom
+  126     8  -4.395 23 -29 33 -34 31 -32 #(-7 22 -28 )#(-6 28 -29 )#
+            (-2 23 -22 ) imp:n=1 imp:p=0 $ch4+fe
+  127     0         #(24 -36 8 -41 26 -27 ) 2 imp:n=0 imp:p=0$big graveyard
+  128     0         8 -23 -36 25 26 -27 imp:n=0 imp:p=0$top grave
+  129     0         -33 24 26 -27 23 -41 imp:n=0 imp:p=0$bottom grave
+  130     0         24 -41 32 -27 -36 23 imp:n=0 imp:p=0$right grave
+  131     0         -36 24 -31 26 23 -41 imp:n=0 imp:p=0$left grave
+  132     9 -0.001225 37 -2 -38 imp:n=1 imp:p=0$detector zone
+  133     9 -0.001225 30 -37 -2 imp:n=1 imp:p=0$space b4 detector
+  134     0         38 -2 imp:n=0 imp:p=0$grave after detection
+  135     0         -8 -2 imp:n=0 imp:p=0$grave b4 water
+  136     0         41 -30 6 imp:n=0 imp:p=0 $grave to kill stuff to just get disk 
+c ---------------------------------------------------------                     
+c ---------------------------------------------------------                     
+c END OF CELL CARDS                                                                 
+c ---------------------------------------------------------                     
+c ---------------------------------------------------------                     
+
+c ---------------------------------------------------------                     
+c ---------------------------------------------------------                     
+c SURFACE CARDS                                                                 
+c ---------------------------------------------------------                     
+c ---------------------------------------------------------  
+    1       c/y 0 0 5  $inner cylinder of the PVC piping
+    2       c/y 0 0 6.25  $outer cylinder of the PVC piping
+    3       c/y 0 0 2.5  $inner side of the first iron collimator
+    4       c/y 0 0 2$inner side of second iron collimator AND fifth lead collimator
+    5       c/y 0 0 1.5  $inner side of third iron collimator
+    6       c/y 0 0 1.25$inner side of fourth lead collimator AND final collimation
+    7       c/y 0 0 10.63  $void after collimator system in FeCH_2
+    8        py 0  $start of water/reference plane
+    9        py 95  $end of water/start of concrete
+   10        py 133.75  $B_4C filter front
+   11        py 134.75  $B_4C filter end/front lead plug
+   12        py 138.75  $end lead plug/front first iron collimator
+   13        py 156.25  $end first iron collimator
+   14        py 167.5  $front 2nd iron collimator
+   15        py 196.25  $end 2nd iron collimator
+   16        py 200  $front 3rd iron collimator
+   17        py 228.75  $end 3rd iron collimator
+   18        py 235  $front Cd filter
+   19        py 235.05  $end Cd filter/front 4th lead collimator
+   20        py 263.75  $end 4th lead collimator
+   21        py 271.25  $front 5th lead collimator
+   22        py 281.25  $end 5th lead collimator/end PVC pipe
+   23        py 266.25  $end of concrete
+   24        pz -100  $bottom of water and concrete
+   25        pz 100  $top of water and concrete
+   26        px -100  $left of water and concrete
+   27        px 100  $right of water and concrete
+   28        py 305.01  $right of void in FeCH_2
+   29        py 346.25  $right of FeCH_2
+   30        py 366.25 $end of geometry vertically... note: cut off last 2 jut outs
+   31        px -40  $back of last
+   32        px 40  $front of last
+   33        pz -27.51  $bottom of FeCH_2
+   34        pz 52.5  $top of FeCH_2 and bottom of CH_2 + B_4C
+   35        pz 84.25  $top of CH_2 + B_4C
+   36        pz 116  $top of outer lead
+   37        py 430  $detector front
+   38        py 440  $detector back
+   39        py 435  $detector middle
+   40        py 370  $plane for graveyard to isolate disk
+   41        py 365  $ “”
+c ---------------------------------------------------------                     
+c ---------------------------------------------------------                     
+c END OF SURFACE CARDS                                                                 
+c ---------------------------------------------------------                     
+c ---------------------------------------------------------                                                                                
+                                                                              
+c ---------------------------------------------------------                     
+c ---------------------------------------------------------                     
+c MATERIAL CARD                                                                 
+c ---------------------------------------------------------                     
+c ---------------------------------------------------------                     
+c ---------------------------------------------------------                     
+c WATER for neutron transport (by mass fraction)                                
+c (ignore H-2, H-3, O-17, and O-18)                                             
+c ---------------------------------------------------------                     
+m1    1001.60c        -0.1119  $ H-1 and mass fraction
+      8016.60c        -0.8881 
+c ---------------------------------------------------------                     
+c Lead *ignoring 204 b/c 1.4% abundance                                         
+c ---------------------------------------------------------                     
+m2    82206.66c    -0.2429024 
+      82207.66c    -0.2238275 82208.66c    -0.5332701 
+c ---------------------------------------------------------                     
+c Concrete *http://mcnptips.blogspot.com/2011/08/123.html*                      
+c ---------------------------------------------------------                     
+m3    1001.24c      -0.012998 
+      1002.24c   -2.0241e-006 8016.24c         -1.165 13027.24c        -0.153 
+      14028.24c      -0.67973 14029.24c     -0.034416 14030.24c     -0.022854 
+      20000.24c        -0.194 26054.24c       -0.0581 26056.24c     -0.026608 
+      26057.24c    -0.0006235 
+c ---------------------------------------------------------                     
+c PVC                                                                           
+c ---------------------------------------------------------                     
+m4    1001.62c      -0.048371 
+      1002.24c      -1.1e-005 6000.24c      -0.384361 17035.62c     -0.424003 
+      17037.62c     -0.143254 
+c ---------------------------------------------------------                     
+c B4_C                                                                          
+c ---------------------------------------------------------                     
+m5    6000.66c            0.2 
+      5010.66c         0.1592 5011.66c         0.6408 
+c ---------------------------------------------------------                     
+c Poly + B4_C **note we are doing a 50/50 mix b/c it isnt specified             
+c ---------------------------------------------------------                     
+m6    1001.62c       0.333295 
+      1002.24c      3.85e-005 6000.24c      0.1666665 6000.66c            0.1 
+      5010.66c         0.0796 5011.66c         0.3204 
+c ---------------------------------------------------------                     
+c Iron for neutron transport                                                    
+c ---------------------------------------------------------                     
+m7    26054.66c       0.05845 
+      26056.66c       0.91754 26057.66c       0.02119 26058.66c       0.00282 
+c ---------------------------------------------------------                     
+c Iron + CH_2                                                                   
+c ---------------------------------------------------------                     
+m8    26054.66c      0.029225 
+      26056.66c       0.45877 26057.66c      0.010595 26058.66c       0.00141 
+      1001.62c       0.333295 1002.24c      3.85e-005 6000.24c      0.1666665 
+c ---------------------------------------------------------                     
+c Air                                                                           
+c ---------------------------------------------------------                     
+m9    7014.24c         0.7843  $ N
+      8016.24c         0.2109 6000.24c         0.0001 
+c ---------------------------------------------------------                     
+c Cadium for neutron transport                                                  
+c ---------------------------------------------------------                     
+m10   48106.66c        0.0125 
+      48108.66c        0.0089 48110.66c        0.1249 48111.66c         0.128 
+      48112.66c        0.2413 48113.66c        0.1222 48114.66c        0.2873 
+      48116.66c        0.0749 
+c ---------------------------------------------------------                     
+c ---------------------------------------------------------                     
+c END OF MATERIAL CARD                                                          
+c ---------------------------------------------------------                     
+c ---------------------------------------------------------    
+c
+c
+c
+c ---------------------------------------------------------                     
+c ---------------------------------------------------------                     
+c SOURCE AND TALLY CARD                                                        
+c ---------------------------------------------------------                     
+c ---------------------------------------------------------   
+c SOURCE: point isotropic with Maxwellian energy spectrum
+SDEF POS 0 1 0 PAR=1 ERG=d1 $ position, particle type, energy
+SP1 -2 0.6 $ Maxwellian spectrum (2) with temp a=0.6 MeV
+c TALLY
+F1:N 9 11 12 19 22 30     $ neutron current at defined surfaces
+E1 0.1 100i 9    $energy bins
+nps 3.5e15      $projected neutrons in an hour of a 10^12 rxtr
+CUT:N j 0.3     $CUT OFF ANY NEUTRONS BELOW 0.3 MeV to speed up code
+c FINISH
